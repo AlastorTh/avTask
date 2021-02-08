@@ -1,0 +1,17 @@
+sudo docker run --rm --name postgres-docker -e POSTGRES_PASSWORD=pass -p 5432:5432 -d postgres
+docker run --name postgresql-container -p 5432:5432 -e POSTGRES_PASSWORD=somePassword -d postgres
+
+psql -h localhost -p 5432 -U postgres
+postgres://localhost:5432/ads?sslmode=disable
+
+migrate -path migrations -database "postgres://postgres:pass@localhost:5432/postgres?sslmode=disable" up
+
+
+CREATE TABLE ads (
+    id bigserial not null primary key,
+    name varchar not null,
+    descript varchar not null,
+    price float not null default 0.00, 
+    piclinks varchar[] not null
+
+);

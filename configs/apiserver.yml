@@ -1,0 +1,4 @@
+apiserver:
+  -bind_addr : :8080
+store:
+  -conn_string : host=localhost port=5432 dbname=postgres-d sslmode=disable 
