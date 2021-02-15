@@ -39,6 +39,7 @@ func (s *Store) Close() {
 	s.db.Close()
 }
 
+// Ad ...
 func (s *Store) Ad() *AdRepository {
 	if s.AdRepository != nil {
 		return s.AdRepository
